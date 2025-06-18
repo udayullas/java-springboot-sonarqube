@@ -5,6 +5,10 @@ pipeline {
         SONAR_TOKEN = credentials('SONAR_TOKEN')
     }
 
+    tools {
+        maven 'maven'  // 👈 This must match the name you configured in Jenkins → Global Tool Configuration
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -29,4 +33,5 @@ pipeline {
         }
     }
 }
+
 
